@@ -1,0 +1,21 @@
+$idade = 25
+
+$resultado = match $idade:
+    case 0          => "Recém-nascido"
+    case 1..12      => "Criança"
+    case 13..17     => "Adolescente"
+    case 18..59     => "Adulto"
+    case 60..200    => "Idoso"
+    case _          => shw("Idade inválida")
+
+shw($resultado)
+
+$lista = ["Ana", "Bia", "Cris"]
+each $item in $lista:
+    shw(item)
+
+each ($i, $item) in $lista:
+    shw(str(i) + ": " + item)
+
+each $n in 1..5:
+    shw(n)

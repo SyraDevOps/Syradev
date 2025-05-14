@@ -1,0 +1,14 @@
+class Matematica:
+    static quadrado(x):
+        return x * x
+
+    static cubo(x):
+        return x * x * x
+
+pi = 3.14159
+
+class Angulo:
+    init(graus):
+        self.graus = graus
+    radianos():
+        return self.graus * pi / 180

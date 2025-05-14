@@ -1,0 +1,18 @@
+saudacao(nome, saudacao_txt="Olá") is -> str:
+    "Retorna uma saudação personalizada."
+    return saudacao_txt + ", " + nome
+
+info(nome, *detalhes, idade=99, cidade="N/A") is:
+    return "Nome: " + nome + " | Idade: " + str(idade) + " | Cidade: " + cidade + " | Detalhes: " + str(detalhes)
+
+triplica(func) is:
+    return (a, b) is func(a, b) * 3
+
+@triplica
+soma_tripla(a, b) is -> int:
+    return a + b
+
+// Testando as funções
+shw(saudacao("Syra"))
+shw(info("Carlos", "programador", "Python", idade=30, cidade="SP"))
+shw(soma_tripla(2, 3))  // Deve mostrar 15

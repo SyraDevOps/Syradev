@@ -1,0 +1,32 @@
+class Pessoa:
+    nome
+    idade
+
+    init(nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+    saudacao():
+        shw("Olá, eu sou " + self.nome)
+
+class Funcionario : Pessoa:
+    cargo
+
+    init(nome, idade, cargo):
+        super(nome, idade)
+        self.cargo = cargo
+
+    saudacao():
+        shw("Olá, sou " + self.nome + " e sou " + self.cargo)
+
+$p = Pessoa("João", 30)
+$p.saudacao()
+
+$f = Funcionario("Ana", 25, "Dev")
+$f.saudacao()
+
+class Matematica:
+    static quadrado(x):
+        return x * x
+
+shw(Matematica.quadrado(5))

@@ -1,0 +1,39 @@
+// Função simples de expressão única
+dobro(x) is x * 2
+shw(dobro(10))
+
+// Função com bloco, docstring, parâmetro padrão e anotação de retorno
+saudacao(nome, saudacao_txt="Olá") is -> str:
+    "Retorna uma saudação personalizada."
+    return saudacao_txt + ", " + nome
+
+shw(saudacao("Syra"))
+shw(saudacao("Dev", saudacao_txt="Oi"))
+
+// Função com variádicos e keyword-only (corrigido)
+info(nome, *detalhes, idade=99, cidade="N/A") is:
+    return "Nome: " + nome + " | Idade: " + str(idade) + " | Cidade: " + cidade + " | Detalhes: " + str(detalhes)
+
+shw(info("Ana", "dev", "python", idade=30, cidade="SP"))
+shw(info("Beto", "musico", cidade="Rio"))
+
+// Função anônima/lambda atribuída a variável
+$minha_lambda = (x, y=5) is x + y
+shw($minha_lambda(10))
+shw($minha_lambda(10, 20))
+
+// Decorador Syra que triplica o retorno (corrigido)
+triplica(func) is:
+    return (a, b) is func(a, b) * 3
+
+@triplica
+soma_tripla(a, b) is -> int:
+    return a + b
+
+shw(soma_tripla(2, 3))  // Deve mostrar 15
+
+// Teste de keyword-only puro
+so_kw(*, x=1, y=2) is:
+    return x * y
+
+shw(so_kw(x=4, y=5))
