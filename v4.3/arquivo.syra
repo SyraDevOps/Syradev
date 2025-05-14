@@ -1,0 +1,5 @@
+// Executa e exibe o resultado do terminal
+&SyraOS("dir", true)
+
+// Executa mas não exibe o resultado (a não ser que haja erro)
+&SyraOS("dir")

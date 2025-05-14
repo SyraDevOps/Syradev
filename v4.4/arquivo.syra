@@ -1,0 +1,7 @@
+&attempt:
+    shw(1/0)
+&rescue e:
+    shw("Erro: " + $e)
+
+$resultado = &run operacao() orv "falha"
+shw($resultado)
