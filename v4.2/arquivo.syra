@@ -1,0 +1,16 @@
+$arquivo = &Syope("exemplo", ".txt")
+
+// Escreve conteúdo
+&Sywr($arquivo, "Olá, mundo!")
+&Sywr($arquivo, "Segunda linha")
+
+// Lê conteúdo
+$conteudo = &Syread($arquivo)  
+shw($conteudo)
+
+// Fecha o arquivo
+&Sycls($arquivo)
+
+// Também suporta CSV, JSON e Excel
+$dados = &Syread("planilha.xlsx")
+shw($dados)
